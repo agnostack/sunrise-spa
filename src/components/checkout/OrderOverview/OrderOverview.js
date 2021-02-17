@@ -42,6 +42,8 @@ export default {
     cardPaid(paymentid) {
       if (paymentid) {
         this.paymentid = paymentid;
+        // NOTE this is to trigger creation of the order
+        this.$emit("complete-order", this.paymentid)
       }
       this.paid = true;
     },
